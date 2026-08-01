@@ -168,7 +168,6 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/*Scrolling text Section*/}
       <div id="page5" data-scroll data-scroll-speed="-2.5">
         <div className="elem">
           <h1>
@@ -188,7 +187,6 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      {/* About Section */}
       <section
         className="relative z-10 w-full items-center justify-center overflow-hidden pt-16 pb-36 md:pt-20 md:pb-44 lg:pt-20 lg:pb-56"
         id="about"
