@@ -23,13 +23,13 @@ export const devProjects = [
   },
   {
     id: 1,
-    name: "Tranxact",
+    name: "Cirra",
     description:
-      "A crypto built for a software startup and small business, to showcase their services and mark their online presence.",
+      "A crypto conversion platform shaped across frontend, design, operations, and co-founder responsibilities.",
     technologies: ["React", "Figma", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/victorcodess/propellent",
     demo: "https://propellent.vercel.app/",
-    image: ("/tranxact.png"),
+    image: ("/cirra.png"),
     available: true,
   },
   {

@@ -7,10 +7,9 @@ interface Panel {
   title: string;
   description: string;
   icon: React.ReactElement;
-  action: string;
-  link: string;
-  backgroundImage: string; // Changed from gradientClass to backgroundImage
+  backgroundImage: string;
   gradientClass: string;
+  slug: string;
 }
 
 interface PanelItemProps {
@@ -24,7 +23,6 @@ interface MediaQueryState {
   desktopMedium: boolean;
 }
 
-// Custom hook to check media query
 const useMediaQuery = (): MediaQueryState => {
   const [desktopMedium, setDesktopMedium] = useState<boolean>(
     window.matchMedia("(min-width: 768px)").matches
@@ -33,11 +31,10 @@ const useMediaQuery = (): MediaQueryState => {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-    const handleChange = (e: MediaQueryListEvent): void => {
-      setDesktopMedium(e.matches);
+    const handleChange = (event: MediaQueryListEvent): void => {
+      setDesktopMedium(event.matches);
     };
 
-    // Modern API for media query event listener
     mediaQuery.addEventListener("change", handleChange);
 
     return () => {
@@ -55,83 +52,53 @@ const Dashboard: React.FC = () => {
   const panels: Panel[] = [
     {
       id: 0,
-      title: "Tranxact",
+      title: "Cirra",
       description:
-        "Tranxact is a cutting-edge crypto trading platform designed for seamless, secure, and efficient digital asset trading. Empowering users with advanced tools, deep liquidity, and a user-friendly interface to navigate the future of finance.",
+        "A crypto conversion platform shaped across frontend, design, operations, and co-founder responsibilities.",
       icon: <Figma size={40} />,
-      action: "View Project",
-      link: "https://www.behance.net/gallery/217194129/tranxact-WEB-3-website",
-      backgroundImage: "/tranxact.png",
+      backgroundImage: "/cirra.png",
       gradientClass: "bg-gradient-to-br from-blue-500/20 to-blue-600/10",
+      slug: "cirra",
     },
     {
       id: 1,
-      title: "PhysioHelp",
+      title: "Community Shield",
       description:
-        "A comprehensive physiotherapy platform for consultations, seamless appointment booking, and hassle-free equipment shopping. Empowering users with expert care, personalized recovery plans, and top-quality physiotherapy gear—all in one place.",
+        "A Next.js 14 safety platform with broadcast alert modules, resident filters, and clean API boundaries.",
       icon: <Code size={40} />,
-      action: "View Project",
-      link: "https://www.physiohelp.ng",
-      backgroundImage: "/PHelp.jpg",
+      backgroundImage: "/csa.png",
       gradientClass: "bg-gradient-to-br from-purple-500/20 to-purple-600/10",
+      slug: "community-shield",
     },
     {
       id: 2,
-      title: "BlessPM",
+      title: "Investure",
       description:
-        "Simple and minimalistic portfolio website for Blessing Ndukwe, an experienced Product Manager crafting unique, user-friendly products and web experiences for numerous great projects.",
+        "A React and TypeScript stabilization effort covering Netlify migration, redirects, auth headers, and axios interceptors.",
       icon: <Github size={40} />,
-      action: "View Project",
-      link: "https://github.com/Justina18/BlairFolio",
-      backgroundImage: "/blessing.png",
+      backgroundImage: "/gems.jpg",
       gradientClass: "bg-gradient-to-br from-emerald-500/20 to-emerald-600/10",
+      slug: "investure",
     },
     {
       id: 3,
-      title: "Soundlux",
+      title: "VergeTracks",
       description:
-        "Landing page for cutting-edge headsets deliver crystal-clear audio, ultimate comfort, and seamless connectivity for music lovers, gamers, and professionals alike.",
+        "A systems architecture study for append-only tracking, traceability, operational constraints, and safeguards.",
       icon: <Code size={40} />,
-
-      action: "View Project",
-      link: "https://lawrence-mu.vercel.app/",
-      backgroundImage: "/soundlux.jpg",
+      backgroundImage: "/debugging.jpg",
       gradientClass: "bg-gradient-to-br from-white-500/20 to-amber-600/10",
+      slug: "vergetracks",
     },
     {
       id: 4,
-      title: "The Art of Travelling",
+      title: "Pick Me",
       description:
-        "An all-in-one travel companion for seamless trip planning, booking, and exploration. Discover new destinations, find the best deals, and create unforgettable travel experiences—all at your fingertips.",
-      icon: <Github size={40} />,
-
-      action: "View Project",
-      link: "https://github.com/Justina18/Art-of-Travelling",
-      backgroundImage: "/aot.jpg",
-      gradientClass: "bg-gradient-to-br from-rose-500/20 to-rose-600/10",
-    },
-    // {
-    //   id: 5,
-    //   title: "P2BU",
-    //   description:
-    //     "E-commerce Website for Proud 2 Be Ugly.",
-    //   icon: <UserCheck size={20} />,
-    //   action: "View Project",
-    //   link: "/projects/p2bu",
-    //   backgroundImage: "/images/p2bu-bg.jpg",
-    //   gradientClass: "bg-gradient-to-br from-cyan-500/20 to-cyan-600/10",
-    // },
-    {
-      id: 6,
-      title: "The Bud Barbers",
-      description:
-        "Brand redesign for The Bud Barbers that brings a fresh, modern identity to your weed trimming business—combining precision, efficiency, and innovation for a cut above the rest.",
+        "A Gen Z snack brand identity study built around Cobalt blue, Mustard yellow, and launch-ready GTM thinking.",
       icon: <Figma size={40} />,
-
-      action: "View Project",
-      link: "https://www.behance.net/gallery/220474129/The-Bud-Barbers-branding-redesign",
-      backgroundImage: "/bud.png",
-      gradientClass: "bg-gradient-to-br from-indigo-500/20 to-indigo-600/10",
+      backgroundImage: "/chef.png",
+      gradientClass: "bg-gradient-to-br from-rose-500/20 to-rose-600/10",
+      slug: "pick-me",
     },
   ];
 
@@ -165,23 +132,20 @@ const Dashboard: React.FC = () => {
   );
 };
 
-// Separate component for each panel to better manage spring animations
 const PanelItem: React.FC<PanelItemProps> = ({
   panel,
   isSelected,
   onMouseEnter,
   desktopMedium,
 }) => {
-  const startWidth = desktopMedium ? 70 : 100; // Width when collapsed
-  const endWidth = desktopMedium ? 563 : 575; // Width when expanded
+  const startWidth = desktopMedium ? 70 : 100;
+  const endWidth = desktopMedium ? 563 : 575;
 
-  // Using the spring configuration for width animation
   const props = useSpring({
     width: isSelected ? endWidth : startWidth,
     config: { mass: 5, friction: 120, tension: 600 },
   });
 
-  // Content opacity spring animation
   const contentProps = useSpring({
     opacity: isSelected ? 1 : 0,
     config: { duration: 600 },
@@ -197,7 +161,6 @@ const PanelItem: React.FC<PanelItemProps> = ({
       style={props}
       onMouseEnter={onMouseEnter}
     >
-      {/* Background container with actual image and overlay */}
       <div className="absolute inset-0 -z-10 rounded-xl overflow-hidden">
         <div
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-out ${
@@ -207,22 +170,18 @@ const PanelItem: React.FC<PanelItemProps> = ({
             backgroundImage: `url('${panel.backgroundImage}')`,
           }}
         ></div>
-        {/* Apply color overlay with the gradientClass */}
         <div
           className={`absolute inset-0 ${panel.gradientClass} opacity-50 -z-5`}
         ></div>
-        {/* Add additional dark gradient overlay for better text visibility */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/20 -z-5"></div>
       </div>
 
-      {/* Glass shine effect */}
       <div
         className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-400/50 to-transparent transition-opacity duration-500 ${
           isSelected ? "opacity-100" : "opacity-0"
         }`}
       ></div>
 
-      {/* Vertical title */}
       <div
         className={`absolute flex items-center z-10 pointer-events-none h-6 top-60 left-8 w-96 transform-gpu -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center ${
           isSelected ? "" : "opacity-80"
@@ -233,9 +192,8 @@ const PanelItem: React.FC<PanelItemProps> = ({
         </span>
       </div>
 
-      {/* Expanded content */}
       <animated.div
-        className="absolute inset-0 w-9/12pointer-events-none"
+        className="absolute inset-0 w-9/12 pointer-events-none"
         style={contentProps}
       >
         <div className="p-5 pl-16 h-full flex flex-col mt-8">
@@ -249,16 +207,12 @@ const PanelItem: React.FC<PanelItemProps> = ({
             {panel.description}
           </p>
 
-          <div className="mt-auto pointer-events-auto">
+          <div className="mt-auto pointer-events-auto flex items-center gap-3">
             <a
-              href={panel.link}
-              target="_blank"
-              className="inline-flex items-center space-x-2 mb-8 bg-white px-4 py-2 rounded-lg text-sm transition-colors duration-300 hover:bg-gray-600 no-underline text-black"
+              href={`#/works/${panel.slug}`}
+              className="inline-flex items-center space-x-2 mb-8 bg-transparent border-2 border-white text-white px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:bg-white hover:text-black no-underline"
             >
-              <span>{panel.action}</span>
-              <span className="inline-flex w-4 h-4">
-                {React.cloneElement(panel.icon, { size: 16 })}
-              </span>
+              <span>Read Story</span>
             </a>
           </div>
         </div>

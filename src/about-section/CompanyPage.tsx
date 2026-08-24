@@ -1,0 +1,21 @@
+import React, { useEffect } from "react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { companies } from "./companyDetails";
+
+interface CompanyPageProps { slug: string; onNavigate: (hash: string) => void; }
+
+const CompanyPage: React.FC<CompanyPageProps> = ({ slug, onNavigate }) => {
+  const company = companies.find((item) => item.slug === slug);
+  useEffect(() => { window.scrollTo(0, 0); }, [slug]);
+  if (!company) return <main className="flex min-h-screen items-center justify-center bg-[--color-dark] px-6 pt-24 text-center text-[#e4ded7]"><div><h1 className="mb-4 text-3xl font-bold text-white">Company not found</h1><button onClick={() => onNavigate("#/about")} className="cursor-none border-2 border-white px-6 py-3 font-bold text-white transition-all hover:bg-white hover:text-black">Back to About</button></div></main>;
+  const logo = company.logoPath ? <img src={company.logoPath} alt={`${company.name} logo`} className="h-full w-full object-contain" /> : <div aria-label={`${company.name} logo placeholder`} className="h-full w-full bg-[--color-darker]" />;
+  return <main className="min-h-screen bg-[--color-dark] px-6 pb-24 pt-24 text-[#e4ded7] sm:px-10 lg:px-16"><div className="mx-auto max-w-5xl">
+    <button onClick={() => onNavigate("#/about")} className="mb-16 inline-flex cursor-none items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400 transition-colors hover:text-white"><ArrowLeft size={17} /> About</button>
+    <header className="mb-20 max-w-4xl"><p className="head-font mb-4 text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">Experience</p><div className="mb-7 flex items-start gap-5 sm:gap-7"><div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-gray-800 bg-[--color-darker] sm:h-20 sm:w-20">{company.website ? <a href={company.website} target="_blank" rel="noreferrer" aria-label={`Visit ${company.name}`} className="block h-full w-full transition-opacity hover:opacity-70">{logo}</a> : logo}</div><h1 className="head-font text-5xl uppercase leading-[.95] text-white sm:text-7xl">{company.name}</h1></div><p className="text-lg font-light leading-relaxed text-gray-400 sm:text-xl">{company.blurb}</p></header>
+    {company.roles.length > 0 && <section className="mb-20 border-y border-gray-800/80 bg-[--color-darker] px-6 py-8 sm:px-10"><p className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-500">Role{company.roles.length > 1 ? "s" : ""}</p><div className="grid gap-6 sm:grid-cols-2">{company.roles.map((role) => <div key={`${role.title}-${role.duration}`}><p className="text-lg font-semibold text-white">{role.title}</p><p className="mt-1 text-sm text-gray-400">{role.duration}</p></div>)}</div></section>}
+    <div className="grid gap-8 lg:grid-cols-2">{company.contributions?.length ? <section className="border-y border-gray-800/80 bg-[--color-darker] px-6 py-8 sm:px-10"><p className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-500">What I did</p><ul className="list-disc space-y-4 pl-5 text-base leading-relaxed text-gray-300 sm:text-lg">{company.contributions.map((contribution) => <li key={contribution}>{contribution}</li>)}</ul></section> : null}{company.gained && <section className="border-y border-gray-800/80 bg-[--color-darker] px-6 py-8 sm:px-10"><p className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-500">What I gained</p><p className="text-base leading-relaxed text-gray-300 sm:text-lg">{company.gained}</p></section>}</div>
+    {company.relatedCaseStudy && <section className="mt-20"><button onClick={() => onNavigate(`#/works/${company.relatedCaseStudy}`)} className="group flex w-full cursor-none items-center justify-between rounded-2xl border border-gray-800 bg-[--color-darker] p-7 text-left transition-colors hover:border-[--color-turquoise]/50 sm:p-10"><div><p className="mb-2 text-xs font-bold uppercase tracking-widest text-[--color-turquoise]">Related work</p><p className="text-xl font-bold text-white">View the case study</p></div><ArrowUpRight className="text-[--color-turquoise] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></button></section>}
+  </div></main>;
+};
+
+export default CompanyPage;
