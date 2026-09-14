@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const roles = ["Web Designer", "Graphic Designer", "CFO", "Developer"];
+const roles = ["Frontend Engineer", "Product Designer", "Design Systems Builder"];
 
 export default function SwitchingText() {
   const [index, setIndex] = useState(0);

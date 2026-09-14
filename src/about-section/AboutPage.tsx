@@ -4,6 +4,8 @@ import { companies } from "./companyDetails";
 
 interface AboutPageProps { onNavigate: (hash: string) => void; }
 
+const selectedWorks = ["Community Shield", "Cirra", "Kora Payouts", "Ule Homes", "KakuSkroll", "Rukkyman", "Physiohelp"];
+
 const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -12,7 +14,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       <header className="mb-20 max-w-4xl animate__animated animate__fadeInDown">
         <p className="head-font mb-4 text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">About me</p>
         <h1 className="head-font mb-8 text-5xl uppercase leading-[.95] tracking-tighter text-white sm:text-7xl md:text-8xl">Designing, building, and making things move.</h1>
-        <p className="max-w-3xl text-lg font-light leading-relaxed text-gray-400 md:text-xl">I’m a product designer and frontend developer with 4+ years of experience shaping clear, useful digital products. I bring design thinking and frontend craft together to create interfaces that look considered and work beautifully.</p>
+        <p className="max-w-3xl text-lg font-light leading-relaxed text-gray-400 md:text-xl">Frontend Engineer and Product Designer with 4+ years of experience building and designing web products with JavaScript and TypeScript. I bring product thinking and frontend craft together to create interfaces that are clear, useful, and ready to ship.</p>
+        <p className="mt-5 text-sm text-gray-500">igbanijustina@gmail.com · +234 7036825451</p>
       </header>
 
       <section className="mb-28">
@@ -30,8 +33,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       </section>
 
       <section className="mb-28 grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="rounded-2xl border border-gray-800 bg-[--color-darker] p-8 sm:p-10"><p className="head-font mb-6 text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">02 / Skills</p><h2 className="head-font mb-8 text-3xl uppercase text-white sm:text-4xl">Beyond the interface</h2><div className="flex flex-col gap-5 text-gray-400"><p><span className="font-semibold text-white">Motion design</span><br />Jitter</p><p><span className="font-semibold text-white">Graphic design</span><br />Canva, Photoshop</p><p><span className="font-semibold text-white">Operations management</span></p></div></div>
-        <div className="rounded-2xl border border-gray-800 bg-[--color-darker] p-8 sm:p-10"><p className="head-font mb-6 text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">03 / Education</p><h2 className="mb-3 text-2xl font-bold text-white">Bachelor of Applied Geophysics</h2><p className="mb-6 text-gray-400">University of Benin · 2022–2026</p><p className="text-sm leading-relaxed text-gray-500">Seismology, Seismic Reflection, and Exploration Geophysics.</p></div>
+        <div className="rounded-2xl border border-gray-800 bg-[--color-darker] p-8 sm:p-10"><p className="head-font mb-6 text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">02 / Skills</p><h2 className="head-font mb-8 text-3xl uppercase text-white sm:text-4xl">Engineering, design, and delivery</h2><div className="flex flex-col gap-5 text-gray-400"><p><span className="font-semibold text-white">Frontend engineering</span><br />TypeScript, JavaScript, React, Next.js, React Native, HTML5, CSS3, Tailwind CSS, TanStack Query, REST APIs, Storybook</p><p><span className="font-semibold text-white">Product design</span><br />Figma, FigJam, Information Architecture, User Flows, UI/UX Prototyping, Design Systems, Interaction Design, Product Strategy, Motion Design</p><p><span className="font-semibold text-white">Collaboration and leadership</span><br />Cross-functional Collaboration, Team Leadership, Product Development, Design-to-Development Handoff, Operations Management</p></div></div>
+        <div className="rounded-2xl border border-gray-800 bg-[--color-darker] p-8 sm:p-10"><p className="head-font mb-6 text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">03 / Education</p><h2 className="mb-3 text-2xl font-bold text-white">B.Sc. Applied Geophysics</h2><p className="mb-6 text-gray-400">University of Benin · June 2022 - July 2026</p><div className="border-t border-gray-800 pt-5"><h3 className="font-bold text-white">Frontend Certification</h3><p className="text-gray-400">The Curve by Kora · June 2026</p></div></div>
+      </section>
+      <section className="border-t border-gray-800/80 pt-10">
+        <p className="head-font text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">Selected work</p>
+        <p className="mt-5 max-w-4xl text-2xl font-bold leading-tight text-white sm:text-4xl">{selectedWorks.join(" · ")}</p>
+        <p className="mt-5 text-sm text-gray-500">Recent works across frontend engineering, product design, and client delivery.</p>
       </section>
     </div>
   </main>;

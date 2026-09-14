@@ -74,14 +74,15 @@ function useLandingPageLifecycle(isLandingPage: boolean) {
 }
 
 const experienceTimeline = [
-  { company: "Kora", role: "Frontend Engineer" },
-  { company: "KakuSkroll", role: "Frontend Engineer" },
-  { company: "BuildIt", role: "Frontend Developer" },
-  { company: "Ule Homes", role: "Frontend Developer" },
-  { company: "Cirra", role: "Co-founder, Frontend, Design & Ops" },
-  { company: "Nexinventix", role: "Frontend Engineer" },
-  { company: "De Verge Hub", role: "Systems & Product Design" },
-  { company: "Community Shield", role: "Lead Frontend Engineer" },
+  { company: "Community Shield", role: "Lead Frontend Developer" },
+  { company: "De Verge Hub", role: "Lead Product Designer" },
+  { company: "BuildIt", role: "Co-founder, part-time" },
+  { company: "Nexinventix", role: "Operations Lead, Software Development" },
+  { company: "Ule Homes", role: "Product Designer" },
+  { company: "Cirra", role: "Frontend Developer -> Creative/Product Designer" },
+  { company: "KakuSkroll", role: "Product Designer" },
+  { company: "Kora", role: "Frontend Developer" },
+  { company: "The Curve Africa", role: "Frontend Intern" },
 ];
 
 const App: React.FC = () => {
@@ -204,7 +205,7 @@ const App: React.FC = () => {
                 </h1>
                 <img
                   src="/bit.png"
-                  alt="Nina's Bitmoji"
+                  alt="Justina Igbani"
                   className="absolute top-[85%] left-[50%] transform -translate-x-1/2 w-[120px] sm:w-[150px] md:w-[200px] lg:w-[240px] rounded-[8px] bg-white grayscale hover:grayscale-0"
                 />
               </div>
@@ -212,14 +213,14 @@ const App: React.FC = () => {
               <div className="animate-on-scroll slideInUp mt-16 flex flex-col sm:flex-row justify-between">
                 <div className="w-full sm:w-1/2">
                   <p className="text-left w-[60%] text-[14px] sm:text-[16px] md:text-[18px] font-semibold text-[#e4ded7] md:text-[18px]">
-                    Frontend Engineer and Web Designer, prev at Kora, currently
-                    available for work.
+                    Frontend Engineer & Product Designer with 4+ years of
+                    experience building and designing web products.
                   </p>
                 </div>
                 <div className="flex justify-end">
                   <p className="text-right  w-[60%] text-[16px] font-semibold text-[#e4ded7] md:text-[18px]">
-                    Focused on interfaces and experiences, working remotely from
-                    Lagos, Nigeria.
+                    Based in Nigeria, working across product interfaces, design
+                    systems, and production-ready frontend experiences.
                   </p>
                 </div>
               </div>
@@ -257,28 +258,22 @@ const App: React.FC = () => {
               <div className="mx-auto flex w-[100%] flex-col lg:max-w-[1200px] lg:flex-row lg:gap-20">
                 <div className="mb-10 flex w-[100%] text-center sm:text-left flex-col gap-4 text-[18px] font-medium  leading-relaxed tracking-wide text-[#e4ded7] md:mb-16 md:gap-6 md:text-[20px] md:leading-relaxed lg:mb-16  lg:max-w-[90%] lg:text-[24px] ">
                   <p>
-                    I specialize in designing intuitive and high-impact websites for
-                    SaaS, Web3, and AI startups. My passion lies in creating
-                    seamless digital experiences that blend aesthetics with
-                    functionality.
+                    I am a Frontend Engineer and Product Designer with 4+ years of
+                    experience building and designing web products with JavaScript
+                    and TypeScript.
                   </p>
                   <p>
-                    Beyond my work as a Front-end developer and a UI/UX designer,I
-                    enjoy collaborating with cross-functional teams to turn ideas
-                    into market-ready solutions. I stay up-to-date with industry
-                    trends, constantly refining my skills to push the boundaries of
-                    design and technology.
+                    I work across React-based frontend development, product
+                    interfaces, design systems, and translating product
+                    requirements into production-ready experiences.
                   </p>
                   <p>
-                    When I'm not writing code or designing, you can find me
-                    binge-watching anime, hanging out with friends, or discovering
-                    new music in my favorite genres like RnB, Afro-soul, and Chill
-                    Rap.
+                    I enjoy owning features end-to-end, working across product and
+                    engineering teams, and designing with implementation in mind.
                   </p>
                   <p>
-                    I'm currently working on some exciting projects that I can't
-                    wait to share with you. But I'm always open to new opportunities
-                    and collaboration
+                    I am open to thoughtful collaborations across product design
+                    and frontend engineering.
                   </p>
                 </div>
 
@@ -317,9 +312,8 @@ const App: React.FC = () => {
                     </p>
                     <p>
                       {" "}
-                      JavaScript (ES6+), React, Next.js, TypeScript, Prismic CMS,
-                      Redux, Redux Toolkit, React Testing Library, Vitetest, HTML5,
-                      Git/GitHub, NextAuth, Formik.
+                      TypeScript, JavaScript, React, Next.js, React Native, HTML5,
+                      CSS3, Tailwind CSS, TanStack Query, REST APIs, Storybook.
                     </p>
                   </div>
                   <div className="flex flex-col gap-3">
@@ -333,8 +327,9 @@ const App: React.FC = () => {
                     </p>
                     <p>
                       {" "}
-                      CSS3/SCSS/SASS, Tailwind CSS, Material UI, Framer Motion,
-                      GSAP, Bootstrap, Chart.js.
+                      Figma, FigJam, Information Architecture, User Flows, UI/UX
+                      Prototyping, Design Systems, Interaction Design, Product
+                      Strategy, Motion Design.
                     </p>
                   </div>
                   <div className="flex flex-col gap-3">
@@ -347,8 +342,9 @@ const App: React.FC = () => {
                     </h2>
                     <p>
                       {" "}
-                      Figma, Framer, FigJam, Adobe XD, ProtoPie, Adobe Photoshop, UX
-                      Research, UI Design, Prototyping.
+                      Cross-functional Collaboration, Team Leadership, Product
+                      Development, Design-to-Development Handoff, Operations
+                      Management.
                     </p>
                   </div>
                 </div>
@@ -376,7 +372,7 @@ const App: React.FC = () => {
               </div>
               <img
                 src="/call.png"
-                alt="Nina's Bitmoji"
+                alt="Justina Igbani"
                 className="w-[150px] rounded-[8px] bg-white grayscale hover:grayscale-0 md:w-[200px] md:rounded-[18 px] lg:w-[280px]"
               />
 
