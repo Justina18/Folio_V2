@@ -3,17 +3,15 @@ import { blogDetails } from "./blogDetails";
 
 const Blog = () => {
   return (
-    <section className="z-10 flex w-full flex-col items-center justify-center overflow-hidden bg-cover bg-center pt-20 md:pb-16 lg:pb-32">
-      <header className="mb-6 flex flex-col items-center">
-        <p className="flex max-w-[500px] pr-5 flex-col items-start text-left font-extrabold uppercase leading-[0.9em] text-[#e4ded7] sm:max-w-full sm:flex-row sm:items-center sm:justify-center sm:text-center lg:text-center text-[clamp(70px,10vw,100px)]">
-          Blog
-        </p>
-        <p className="text-[24px] text-center sm:text-left text-[#e4ded7] md:text-[30px] lg:text-[20px]">
-        I write articles to solidify my understanding, share relatable content
-        and rants, and connect other developers.
+    <main className="min-h-screen bg-[--color-dark] px-6 pb-32 pt-28 text-[#e4ded7] sm:px-10 lg:px-16">
+      <header className="mx-auto mb-16 max-w-7xl">
+        <p className="head-font mb-4 text-sm font-bold uppercase tracking-widest text-[--color-turquoise]">Writing</p>
+        <h1 className="head-font max-w-5xl text-6xl uppercase leading-[.9] text-white sm:text-8xl md:text-[9rem]">All writings.</h1>
+        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
+          Articles, reflections, and rants about learning, building, and figuring things out.
         </p>
       </header>
-      <div className="lg:w- [850px] grid w-[90%] max-w-[1200px] grid-cols-1 grid-rows-3 place-content-center place-items-center gap-x-6 gap-y-6 sm:grid-rows-2 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-1">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {blogDetails.map((blog, index) => {
           return (
             <BlogCard
@@ -28,7 +26,7 @@ const Blog = () => {
           );
         })}
       </div>
-    </section>
+    </main>
   );
 };
 

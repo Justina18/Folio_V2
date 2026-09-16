@@ -29,6 +29,7 @@ const NavBar = () => {
   const navItems = [
     { href: isSubpage ? "#/" : "#home", label: "Home" },
     { href: "#/works", label: "Works" },
+    { href: "#/blog", label: "Blog" },
     { href: "#/posters", label: "Posters" },
     { href: "#/about", label: "About" },
     { href: "#/contact", label: "Contact" },

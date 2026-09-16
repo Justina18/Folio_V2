@@ -26,7 +26,7 @@ const WorksPage: React.FC<WorksPageProps> = ({ onNavigate }) => {
             <div
               key={project.slug}
               onClick={() => onNavigate(`#/works/${project.slug}`)}
-              className="group cursor-none bg-[--color-darker] border border-gray-800/80 rounded-2xl overflow-hidden hover:border-[#3CC8C8]/50 transition-all duration-500 flex flex-col h-full shadow-lg hover:shadow-[#3CC8C8]/5 animate__animated animate__fadeInUp"
+              className="group cursor-none bg-[--color-darker] border border-gray-800/80 rounded-2xl overflow-hidden hover:border-[#C0B6F3]/50 transition-all duration-500 flex flex-col h-full shadow-lg hover:shadow-[#C0B6F3]/5 animate__animated animate__fadeInUp"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Project Image Container */}

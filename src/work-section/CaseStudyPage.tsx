@@ -94,6 +94,9 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }) => {
     { label: "Duration", value: currentProject.duration },
     { label: "Platform", value: currentProject.platform },
     { label: "Screens", value: currentProject.screens },
+    { label: "Studio", value: currentProject.studio },
+    { label: "Year", value: currentProject.year?.toString() },
+    { label: "Tech", value: currentProject.technologies?.join(", ") },
   ].filter((item) => Boolean(item.value));
 
   return (
@@ -114,6 +117,16 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }) => {
             <a href="#overview" className="cursor-none inline-flex items-center gap-2 font-bold bg-transparent text-white px-6 py-3 rounded-sm border-b-2">
               Read the story <ArrowDown size={18} />
             </a>
+            {currentProject.url ? (
+              <a
+                href={currentProject.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-none ml-5 inline-flex items-center gap-2 font-bold text-[--color-turquoise]"
+              >
+                Visit site <Globe2 size={18} />
+              </a>
+            ) : null}
           </div>
         </div>
         <div className="relative rounded-2xl overflow-hidden bg-[#011c21]/30 border border-gray-800 p-6 flex justify-center items-center aspect-video animate__animated animate__fadeInRight">
@@ -150,6 +163,53 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }) => {
           {currentProject.overviewText}
         </p>
       </section>
+
+      {currentProject.keyFeatures?.length ? (
+        <section className="px-6 sm:px-10 lg:px-16 max-w-5xl mx-auto mb-28">
+          <div className="text-center mb-12">
+            <h2 className="head-font text-3xl sm:text-5xl text-white uppercase mb-4">
+              Key Features
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {currentProject.keyFeatures.map((feature, idx) => (
+              <div key={idx} className="border border-gray-800 bg-[--color-darker] rounded-2xl p-6 text-gray-300 leading-relaxed">
+                <span className="block text-[--color-turquoise] font-bold mb-3">0{idx + 1}</span>
+                {feature}
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {currentProject.designApproach ? (
+        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto mb-28 text-center">
+          <h2 className="head-font text-3xl sm:text-5xl text-white uppercase mb-8">
+            Design Approach
+          </h2>
+          <p className="text-gray-300 text-lg sm:text-xl font-light leading-relaxed">
+            {currentProject.designApproach}
+          </p>
+        </section>
+      ) : null}
+
+      {currentProject.galleryImages?.length ? (
+        <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto mb-28">
+          <h2 className="head-font text-3xl sm:text-5xl text-white uppercase mb-8 text-center">
+            Gallery
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {currentProject.galleryImages.map((image, idx) => (
+              <img
+                key={idx}
+                src={image}
+                alt={`${currentProject.title} project preview ${idx + 1}`}
+                className="w-full rounded-2xl border border-gray-800 object-cover"
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {/* 4. The Problem Section */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto mb-28">
@@ -376,6 +436,17 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }) => {
               ))}
             </div>
           </div>
+        </section>
+      ) : null}
+
+      {currentProject.outcome ? (
+        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto mb-28 text-center">
+          <h2 className="head-font text-3xl sm:text-5xl text-white uppercase mb-8">
+            Outcome
+          </h2>
+          <p className="text-gray-300 text-lg sm:text-xl font-light leading-relaxed">
+            {currentProject.outcome}
+          </p>
         </section>
       ) : null}
 

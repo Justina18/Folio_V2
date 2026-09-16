@@ -8,6 +8,27 @@ export type blogProps = {
 };
 
 export const blogDetails = [
+  {
+    title: "I am not Pretty",
+    image: "/back.png",
+    date: "PERSONAL WRITING",
+    url: "",
+    available: false,
+  },
+  {
+    title: "Four walls and no escape",
+    image: "/debugging.jpg",
+    date: "PERSONAL WRITING",
+    url: "",
+    available: false,
+  },
+  {
+    title: "What happened to Ananso",
+    image: "/gems.jpg",
+    date: "PERSONAL WRITING",
+    url: "",
+    available: false,
+  },
   // {
   //   title: "Building a Text Field Component with Material UI, Formik, and Yup",
   //   image:

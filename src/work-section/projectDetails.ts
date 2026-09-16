@@ -7,11 +7,75 @@ export type ProjectProps = {
   demo: string;
   image: string;
   available: boolean;
+  role?: string;
+  studio?: string;
+  format?: string;
+  year?: number;
+  url?: string;
+  slug?: string;
 };
 
 export const devProjects = [
   {
     id: 0,
+    name: "Rukkyman",
+    description:
+      "A portfolio site built for filmmaker Oghenerukevwe 'Rukky' Otebele — screenwriter, director and editor. Built with React, TypeScript, Tailwind CSS and Framer Motion, featuring an animated preloader, full hero animation sequence, About/Work/Contact pages, and a custom HaloReel image carousel component.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    github: "",
+    demo: "https://rukkyman.netlify.app",
+    image: "/blog.png",
+    available: true,
+    role: "Frontend Developer",
+    studio: "Personal client project",
+    format: "Portfolio site",
+    year: 2026,
+    url: "https://rukkyman.netlify.app",
+    slug: "rukkyman",
+  },
+  {
+    id: 1,
+    name: "Physiohelp",
+    description: "A physiotherapy service platform built for a Lagos-based practice — home-visit and virtual appointment booking, a therapy-equipment store, and content, designed end-to-end in Figma and built with React, Vite and TypeScript.",
+    technologies: ["React", "Vite", "TypeScript"],
+    github: "",
+    demo: "https://physiohelp.ng",
+    image: "/PHelp.jpg",
+    available: true,
+    role: "Product Designer & Frontend Developer",
+    studio: "BuildIt client project",
+    format: "Web app · E-commerce",
+    year: 2025,
+    url: "https://physiohelp.ng",
+    slug: "physiohelp",
+  },
+  {
+    id: 2,
+    name: "Investure",
+    description: "A React and TypeScript platform stabilization effort focused on deployment and authentication reliability.",
+    technologies: ["React", "TypeScript", "Netlify"],
+    github: "",
+    demo: "https://investure.llc/",
+    image: "/gems.jpg",
+    available: true,
+    url: "https://investure.llc/",
+    slug: "investure",
+  },
+  {
+    id: 3,
+    name: "Cirra",
+    description:
+      "A crypto conversion platform shaped across frontend, design, operations, and leadership responsibilities.",
+    technologies: ["React", "Figma", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/victorcodess/propellent",
+    demo: "https://cirrahq.com/",
+    image: "/cirra.png",
+    available: true,
+    url: "https://cirrahq.com/",
+    slug: "cirra",
+  },
+  {
+    id: 4,
     name: "Synthetix",
     description:
       "Built specifically for an AI startup, this website lets them present cutting-edge AI data processing solutions tailored to their customers' needs.",
@@ -22,18 +86,7 @@ export const devProjects = [
     available: true,
   },
   {
-    id: 1,
-    name: "Cirra",
-    description:
-      "A crypto conversion platform shaped across frontend, design, operations, and co-founder responsibilities.",
-    technologies: ["React", "Figma", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/victorcodess/propellent",
-    demo: "https://propellent.vercel.app/",
-    image: ("/cirra.png"),
-    available: true,
-  },
-  {
-    id: 2,
+    id: 5,
     name: "Proud 2 Be Ugly",
     description:
       "P2BU is an aesthetic clothing brand that lets you seamlessly customize your wardrobe with their clothing series. This website lets you seamlessly explore movies and TV series, add bookmarks, and search across all pages. It offers user authentication along with a theme switch.",

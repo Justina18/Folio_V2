@@ -1,7 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const LoadingAnimation = () => {
+type LoadingAnimationProps = {
+  onComplete?: () => void;
+};
+
+const LoadingAnimation = ({ onComplete }: LoadingAnimationProps) => {
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
+
     
   useEffect(() => {
     const tl = gsap.timeline();
@@ -76,6 +83,8 @@ const LoadingAnimation = () => {
       },
       "-=1.2"
     );
+
+    tl.eventCallback("onComplete", () => onCompleteRef.current?.());
   }, []);
 
   return null; // This component only handles animations, no UI is needed here

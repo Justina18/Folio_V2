@@ -48,25 +48,126 @@ export interface CaseStudyData {
   experienceHeading?: string;
   experienceFlows?: ExperienceFlow[];
   reflectionHeading?: string;
+  studio?: string;
+  format?: string;
+  year?: number;
+  url?: string;
+  technologies?: string[];
+  keyFeatures?: string[];
+  designApproach?: string;
+  outcome?: string;
+  galleryImages?: string[];
   reflections?: {
     title: string;
     content: string;
   }[];
 }
 
+const featuredProjectOrder = ["rukkyman", "physiohelp", "investure", "cirra"];
+
 export const caseStudies: CaseStudyData[] = [
   {
-    slug: "cirra",
+    slug: "rukkyman",
     index: "01",
+    title: "Rukkyman",
+    subtitle: "A portfolio site built for filmmaker Oghenerukevwe 'Rukky' Otebele — screenwriter, director and editor.",
+    description: "A portfolio site built for filmmaker Oghenerukevwe 'Rukky' Otebele — screenwriter, director and editor. Built with React, TypeScript, Tailwind CSS and Framer Motion, featuring an animated preloader, full hero animation sequence, About/Work/Contact pages, and a custom HaloReel image carousel component.",
+    heroImage: "/ruk-top.png",
+    role: "Frontend Developer",
+    platform: "Portfolio site",
+    overviewText: "Rukkyman is a portfolio site built for filmmaker Oghenerukevwe 'Rukky' Otebele, bringing screenwriting, directing, and editing work into one cinematic web experience. The build combines a full hero animation sequence, focused project storytelling, and a custom HaloReel image carousel component.",
+    problemHeading: "A filmmaker's body of work needed a focused, memorable home online.",
+    problemCards: [
+      { iconName: "Sparkles", title: "Cinematic First Impression", description: "The site needed motion and pacing that felt intentional without getting in the way of the work." },
+      { iconName: "Palette", title: "Clear Work Storytelling", description: "Visitors needed a simple way to understand Rukky's roles and move through selected projects." },
+      { iconName: "Workflow", title: "Flexible Presentation", description: "The structure had to support different kinds of filmmaking work while staying easy to extend." },
+    ],
+    problemClosing: "The result balances atmosphere with clarity, giving the work room to lead while the interface supplies a strong editorial frame.",
+    goalsHeading: "Portfolio Goals",
+    goals: [
+      { number: "01", title: "Create a strong hero sequence", description: "Use an animated preloader and full hero transition to establish the site's visual language." },
+      { number: "02", title: "Make the work easy to explore", description: "Organize About, Work, and Contact pages around clear navigation and focused project presentation." },
+      { number: "03", title: "Add custom image motion", description: "Build the HaloReel carousel to give selected imagery a distinctive interactive treatment." },
+    ],
+    experienceHeading: "Build Highlights",
+    experienceFlows: [
+      { heading: "Animated entry", description: "The preloader and hero animation sequence create a paced introduction before the portfolio content appears." },
+      { heading: "Project structure", description: "React and TypeScript keep the page structure maintainable while Tailwind CSS supports rapid visual iteration." },
+      { heading: "HaloReel carousel", description: "A custom image carousel component gives the portfolio a visual signature without hiding the work." },
+    ],
+    reflectionHeading: "What Rukkyman Delivered",
+    reflections: [
+      { title: "Motion can frame the work", content: "Animation works best when it establishes tone and then gets out of the way of the portfolio." },
+      { title: "Structure supports personality", content: "Clear page boundaries made it possible for the visual direction to feel expressive without becoming difficult to navigate." },
+      { title: "Components create room to grow", content: "The HaloReel component gives future image stories a reusable foundation." },
+    ],
+    studio: "Personal client project",
+    format: "Portfolio site",
+    year: 2026,
+    url: "https://rukkyman.netlify.app",
+  },
+  {
+    slug: "physiohelp",
+    index: "02",
+    title: "Physiohelp",
+    subtitle: "A physiotherapy service platform built for a Lagos-based practice — home-visit and virtual appointment booking, a therapy-equipment store, and content, designed end-to-end in Figma and built with React, Vite and TypeScript.",
+    description: "A physiotherapy service platform built for a Lagos-based practice — home-visit and virtual appointment booking, a therapy-equipment store, and content, designed end-to-end in Figma and built with React, Vite and TypeScript.",
+    heroImage: "/PHelp.jpg",
+    role: "Product Designer & Frontend Developer",
+    duration: "2025",
+    platform: "Web app · E-commerce",
+    screens: "React, Vite & TypeScript",
+    overviewText: "PhysioHelp is a Nigeria-based physiotherapy service offering home visits, virtual appointments, in-person consultations, and a therapy-equipment store. I designed the full product in Figma and built the frontend in React, Vite and TypeScript, including the REST API integration and the appointment booking flow.",
+    problemHeading: "Healthcare booking flows need clarity, confidence, and fewer unnecessary steps.",
+    problemCards: [
+      { iconName: "Route", title: "Appointment Discovery", description: "Users needed a clear path from finding a service to understanding the next booking step." },
+      { iconName: "Timer", title: "Lower Friction", description: "The interface had to reduce avoidable decisions and keep booking progress easy to follow." },
+      { iconName: "ShieldCheck", title: "Trustworthy Details", description: "Service and appointment information needed to remain visible and understandable throughout the flow." },
+    ],
+    problemClosing: "The product brings care discovery, appointment scheduling, patient education, and equipment sales into one clear healthcare experience.",
+    goalsHeading: "Frontend Goals",
+    goals: [
+      { number: "01", title: "Clarify the booking journey", description: "Make the movement from service discovery to appointment selection easier to understand." },
+      { number: "02", title: "Build responsive interfaces", description: "Support a consistent experience across the devices people use to find care." },
+      { number: "03", title: "Ship practical product improvements", description: "Work closely with product requirements to deliver useful changes without unnecessary complexity." },
+    ],
+    experienceHeading: "Product and Frontend Delivery",
+    experienceFlows: [
+      { heading: "End-to-end product design", description: "Led product design in Figma across the hero, service pillars, treatment philosophy, credibility and differentiator sections, testimonials, blog, and shop." },
+      { heading: "REST API integration", description: "Built the frontend in React, Vite, and TypeScript and wired the product to the backend REST API." },
+      { heading: "Appointment booking", description: "Implemented scheduling, service selection, and confirmation for home-visit, virtual, and in-person care." },
+    ],
+    reflectionHeading: "Outcome",
+    reflections: [
+      { title: "Production delivery", content: "Shipped a production site handling live appointment bookings and equipment sales for a real physiotherapy practice." },
+    ],
+    studio: "BuildIt client project",
+    format: "Web app · E-commerce",
+    year: 2025,
+    url: "https://physiohelp.ng",
+    technologies: ["React", "Vite", "TypeScript"],
+    keyFeatures: [
+      "Home-visit and virtual appointment booking flow, connected to the backend via REST API",
+      "Integrated e-commerce store for physiotherapy tools and equipment",
+      "Content/blog section for patient education",
+      "Testimonial and trust-building sections designed to build credibility for a health service",
+    ],
+    designApproach: "Designed a confident three-tone color system (navy blue as the dominant brand color, white for content sections, and a reserved pink accent used only for testimonials) to keep trust-building content visually distinct without diluting the brand. Paired a bold sans-serif for action-oriented headlines with a serif display face for warmer, editorial moments.",
+    outcome: "Shipped a production site handling live appointment bookings and equipment sales for a real physiotherapy practice.",
+    galleryImages: ["/PHelp.jpg"],
+  },
+  {
+    slug: "cirra",
+    index: "04",
     title: "Cirra",
-    subtitle: "A crypto conversion platform shaped across frontend, design, operations, and co-founder responsibilities.",
+    subtitle: "A crypto conversion platform shaped across frontend, design, operations, and leadership responsibilities.",
     description: "Building a practical crypto-to-fiat conversion experience while evolving the product, brand, and operating rhythm.",
     heroImage: "/cirra.png",
-    role: "Co-founder, Frontend, Design & Operations",
+    role: "Creatuve Design, Frontend, Design & Operations",
     duration: "Ongoing",
     platform: "Web App",
     screens: "Product System",
-    overviewText: "Cirra began as a crypto conversion product and grew into a broader operating challenge: make digital asset exchange feel faster, clearer, and more trustworthy for everyday users. My work moved from frontend implementation into product design, operational structure, and co-founder decision-making, giving me a full-stack view of how product choices become business outcomes.",
+    overviewText: "Cirra began as a crypto conversion product and grew into a broader operating challenge: make digital asset exchange feel faster, clearer, and more trustworthy for everyday users. My work moved from frontend implementation into product design, operational structure, and decision-making, giving me a full-stack view of how product choices become business outcomes.",
     problemHeading: "Crypto conversion still feels technical, fragmented, and hard to trust.",
     problemCards: [
       {
@@ -108,7 +209,7 @@ export const caseStudies: CaseStudyData[] = [
     wireframesImages: ["/cirra.png"],
     designColors: [
       { name: "Deep Teal", hex: "#011c21" },
-      { name: "Cyan Signal", hex: "#3CC8C8" },
+      { name: "Light Purple Signal", hex: "#C0B6F3" },
       { name: "Soft Linen", hex: "#e4ded7" },
       { name: "Midnight", hex: "#0A0A0A" }
     ],
@@ -128,11 +229,12 @@ export const caseStudies: CaseStudyData[] = [
         description: "The work expanded into clearer product messaging, interface structure, and visual decisions that made conversion feel less intimidating."
       },
       {
-        heading: "Operations and co-founder work",
+        heading: "Operations work",
         description: "I moved closer to business execution, connecting product choices to customer support, fulfillment expectations, and repeatable internal processes."
       }
     ],
     reflectionHeading: "What Cirra Sharpened",
+    url: "https://cirrahq.com/",
     reflections: [
       {
         title: "Product is operational",
@@ -144,17 +246,17 @@ export const caseStudies: CaseStudyData[] = [
       },
       {
         title: "Ownership changes the lens",
-        content: "Moving into co-founder responsibilities made me evaluate every design and engineering choice through user, team, and business impact."
+        content: "Moving into leadership responsibilities made me evaluate every design and engineering choice through user, team, and business impact."
       }
     ]
   },
   {
     slug: "community-shield",
-    index: "02",
+    index: "05",
     title: "Community Shield",
     subtitle: "A security communication platform with broadcast alert modules, resident filtering, and resilient API handling.",
     description: "Leading frontend delivery for a Next.js 14 safety platform built around fast alerting and resident-aware communication.",
-    heroImage: "/blog.png",
+    heroImage: "/csa.png",
     role: "Lead Frontend Engineer",
     duration: "Product Build",
     platform: "Next.js 14",
@@ -213,6 +315,7 @@ export const caseStudies: CaseStudyData[] = [
       }
     ],
     reflectionHeading: "Engineering Notes",
+    url: "https://communityshield.africa/",
     reflections: [
       {
         title: "Clarity beats cleverness",
@@ -234,7 +337,7 @@ export const caseStudies: CaseStudyData[] = [
     title: "Investure",
     subtitle: "A React and TypeScript platform migration focused on deployment stability, redirects, and auth reliability.",
     description: "Stabilizing a product through Netlify migration work, redirect configuration, auth header fixes, and axios interceptors.",
-    heroImage: "/gems.jpg",
+    heroImage: "/investure.png",
     role: "Frontend Engineer",
     duration: "Migration & Stabilization",
     platform: "React, TypeScript & Netlify",
@@ -293,6 +396,7 @@ export const caseStudies: CaseStudyData[] = [
       }
     ],
     reflectionHeading: "What Improved",
+    url: "https://investure.llc/",
     reflections: [
       {
         title: "Deployment is part of UX",
@@ -309,88 +413,89 @@ export const caseStudies: CaseStudyData[] = [
     ]
   },
   {
-    slug: "vergetracks",
-    index: "04",
-    title: "VergeTracks",
-    subtitle: "A systems architecture design study for append-only tracking, traceability, and operational safeguards.",
-    description: "Mapping the problem, constraints, system design, safeguards, and append-only ledger model for a tracking platform.",
-    heroImage: "/debugging.jpg",
-    role: "Systems Architecture Designer",
-    duration: "Design Study",
-    platform: "System Design",
-    screens: "Architecture Blueprint",
-    overviewText: "VergeTracks was approached as a systems architecture study rather than a visual interface project. The work explored how an append-only ledger could support tracking records that remain auditable, resilient, and difficult to tamper with while still being usable by operational teams.",
-    problemHeading: "Tracking systems lose value when records can be overwritten without accountability.",
+    slug: "alazethe",
+    index: "06",
+    title: "Alazethe",
+    subtitle: "A haircare brand identity and packaging system designed for a confident, distinctive shelf presence.",
+    description: "A haircare brand identity and packaging project developed across visual direction, typography, color, and packaging applications.",
+    heroImage: "/alezathe.png",
+    role: "Brand Identity Designer",
+    duration: "Brand Identity",
+    platform: "Identity & Packaging",
+    screens: "Brand System",
+    overviewText: "Alazethe is a haircare brand identity and packaging project focused on creating a clear, memorable visual world across brand touchpoints and product packaging.",
+    problemHeading: "A haircare brand needs a visual identity that feels distinctive, considered, and ready to live on shelf.",
     problemCards: [
       {
-        iconName: "FileClock",
-        title: "Mutable Records",
-        description: "Traditional update flows can hide the history of what changed, when it changed, and who triggered it."
+        iconName: "Palette",
+        title: "Distinctive Direction",
+        description: "The identity needed a clear visual point of view that could make the brand recognizable."
       },
       {
-        iconName: "Network",
-        title: "Operational Constraints",
-        description: "The system needed to account for real teams, imperfect data entry, variable connectivity, and audit requirements."
+        iconName: "Sparkles",
+        title: "Haircare Presence",
+        description: "Packaging had to make the product feel desirable while keeping the brand system coherent."
       },
       {
-        iconName: "LockKeyhole",
-        title: "Safeguards",
-        description: "Sensitive tracking events required permission boundaries, validation, and traceable event history."
+        iconName: "Workflow",
+        title: "Flexible System",
+        description: "The visual language needed to extend beyond a single package into a complete brand identity."
       }
     ],
-    problemClosing: "The architecture needed to preserve trust in the record without making the system too rigid for everyday operations.",
-    goalsHeading: "System Design Goals",
+    problemClosing: "The result gives Alazethe a recognizable identity that can carry both the product and the wider brand story.",
+    goalsHeading: "Brand Identity Goals",
     goals: [
       {
         number: "01",
-        title: "Define the problem and constraints",
-        description: "Document the real-world conditions the system must survive before designing the technical model."
+        title: "Build a memorable identity",
+        description: "Create a visual system that gives the haircare brand a confident, ownable point of view."
       },
       {
         number: "02",
-        title: "Design append-only history",
-        description: "Represent tracking changes as new events rather than destructive edits, preserving a clear audit trail."
+        title: "Translate identity into packaging",
+        description: "Apply the identity to packaging in a way that keeps product presentation clear and compelling."
       },
       {
         number: "03",
-        title: "Add practical safeguards",
-        description: "Introduce validation, access boundaries, and reviewable event logs to reduce operational and security risk."
+        title: "Create room to grow",
+        description: "Define a flexible foundation for future products, campaigns, and brand touchpoints."
       }
     ],
-    experienceHeading: "Architecture Flow",
+    experienceHeading: "Identity and Packaging",
     experienceFlows: [
       {
-        heading: "Problem model",
-        description: "The study started by separating business events from interface actions so the system could track meaningful operational truth."
+        heading: "Visual direction",
+        description: "The identity establishes a distinct visual language for a modern haircare brand."
       },
       {
-        heading: "Append-only ledger",
-        description: "Records are treated as a sequence of events, preserving history and making corrections visible instead of silently replacing past data."
+        heading: "Packaging application",
+        description: "Brand decisions were carried through into packaging so the product experience feels intentional and cohesive."
       },
       {
-        heading: "Safeguards",
-        description: "The architecture uses permission checks, validation, and audit review points to reduce accidental or malicious data changes."
+        heading: "System thinking",
+        description: "The identity was shaped as a repeatable system rather than a one-off artwork."
       }
     ],
-    reflectionHeading: "Systems Takeaways",
+    reflectionHeading: "What Alazethe Delivered",
     reflections: [
       {
-        title: "Constraints lead the architecture",
-        content: "The system became clearer once the operational risks were named before the technical solution."
+        title: "A stronger brand presence",
+        content: "The identity gives the haircare line a recognizable visual foundation."
       },
       {
-        title: "History is a product feature",
-        content: "Append-only records improve trust because users can inspect what happened instead of guessing."
+        title: "Packaging with purpose",
+        content: "The packaging direction connects brand personality with a practical product presentation."
       },
       {
-        title: "Safeguards must be usable",
-        content: "Controls only work when they fit naturally into team workflows."
+        title: "A system to extend",
+        content: "The visual language creates a useful base for future products and communications."
       }
-    ]
+    ],
+    url: "https://www.behance.net/gallery/245006559/Haircare-Brand-Identity-Packaging"
   },
   {
     slug: "pick-me",
-    index: "05",
+    index: "07",
     title: "Pick Me",
     subtitle: "A Gen Z snack brand identity study built around bold shelf presence and go-to-market clarity.",
     description: "Creating a bright brand system with Cobalt blue, Mustard yellow, and a GTM focus for youth snack culture.",
@@ -465,11 +570,11 @@ export const caseStudies: CaseStudyData[] = [
   },
   {
     slug: "alezathe",
-    index: "06",
+    index: "08",
     title: "Alézathe",
     subtitle: "A brand identity system for a hair care line rooted in botanical warmth and quiet luxury.",
     description: "A soft yet commanding product and brand identity system for a natural hair care line.",
-    heroImage: "/alezathe-hero.svg",
+    heroImage: "/alezathe.png",
     role: "Brand & Product Designer",
     platform: "Brand Identity",
     overviewText: "Alézathe needed a distinct identity in a saturated natural hair care market crowded with bold colors and cluttered branding. The brand direction centers textured hair as something worthy of ritual, reverence, and quiet luxury.",
@@ -535,7 +640,7 @@ export const caseStudies: CaseStudyData[] = [
       {
         heading: "Brand Mark & Wordmark",
         description: "The 'alézathe' wordmark pairs an elegant serif with a distinct lowercase 'é' used as a standalone brand symbol across packaging and social content.",
-        images: ["/alezathe-hero.svg"]
+        images: ["/alezathe.png"]
       },
       {
         heading: "Packaging & Product System",
@@ -547,4 +652,9 @@ export const caseStudies: CaseStudyData[] = [
       }
     ]
   }
-];
+].sort((first, second) => {
+  const firstOrder = featuredProjectOrder.indexOf(first.slug);
+  const secondOrder = featuredProjectOrder.indexOf(second.slug);
+  return (firstOrder === -1 ? featuredProjectOrder.length : firstOrder) -
+    (secondOrder === -1 ? featuredProjectOrder.length : secondOrder);
+});

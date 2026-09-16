@@ -52,23 +52,23 @@ const Dashboard: React.FC = () => {
   const panels: Panel[] = [
     {
       id: 0,
-      title: "Cirra",
+      title: "Rukkyman",
       description:
-        "A crypto conversion platform shaped across frontend, design, operations, and co-founder responsibilities.",
-      icon: <Figma size={40} />,
-      backgroundImage: "/cirra.png",
-      gradientClass: "bg-gradient-to-br from-blue-500/20 to-blue-600/10",
-      slug: "cirra",
+        "A portfolio site built for filmmaker Oghenerukevwe 'Rukky' Otebele, with animated storytelling and a custom HaloReel image carousel.",
+      icon: <Code size={40} />,
+      backgroundImage: "/blog.png",
+      gradientClass: "bg-gradient-to-br from-emerald-500/20 to-emerald-600/10",
+      slug: "rukkyman",
     },
     {
       id: 1,
-      title: "Community Shield",
+      title: "Physiohelp",
       description:
-        "A Next.js 14 safety platform with broadcast alert modules, resident filters, and clean API boundaries.",
+        "A healthcare experience with frontend improvements for appointment discovery and booking workflows.",
       icon: <Code size={40} />,
-      backgroundImage: "/csa.png",
-      gradientClass: "bg-gradient-to-br from-purple-500/20 to-purple-600/10",
-      slug: "community-shield",
+      backgroundImage: "/PHelp.jpg",
+      gradientClass: "bg-gradient-to-br from-cyan-500/20 to-cyan-600/10",
+      slug: "physiohelp",
     },
     {
       id: 2,
@@ -82,16 +82,36 @@ const Dashboard: React.FC = () => {
     },
     {
       id: 3,
-      title: "VergeTracks",
+      title: "Cirra",
       description:
-        "A systems architecture study for append-only tracking, traceability, operational constraints, and safeguards.",
-      icon: <Code size={40} />,
-      backgroundImage: "/debugging.jpg",
-      gradientClass: "bg-gradient-to-br from-white-500/20 to-amber-600/10",
-      slug: "vergetracks",
+        "A crypto conversion platform shaped across frontend, design, operations, and leadership responsibilities.",
+      icon: <Figma size={40} />,
+      backgroundImage: "/cirra.png",
+      gradientClass: "bg-gradient-to-br from-blue-500/20 to-blue-600/10",
+      slug: "cirra",
     },
     {
       id: 4,
+      title: "Community Shield",
+      description:
+        "A Next.js 14 safety platform with broadcast alert modules, resident filters, and clean API boundaries.",
+      icon: <Code size={40} />,
+      backgroundImage: "/csa.png",
+      gradientClass: "bg-gradient-to-br from-purple-500/20 to-purple-600/10",
+      slug: "community-shield",
+    },
+    {
+      id: 5,
+      title: "Alazethe",
+      description:
+        "A haircare brand identity and packaging system designed for a confident, distinctive shelf presence.",
+      icon: <Code size={40} />,
+      backgroundImage: "/chef.png",
+      gradientClass: "bg-gradient-to-br from-white-500/20 to-amber-600/10",
+      slug: "alazethe",
+    },
+    {
+      id: 6,
       title: "Pick Me",
       description:
         "A Gen Z snack brand identity study built around Cobalt blue, Mustard yellow, and launch-ready GTM thinking.",
