@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ImageGallery } from "./ImageGallery";
 import { posters } from "./posterDetails";
 
 const PostersPage: React.FC = () => {
+  const [randomizedPosters] = useState(() => [...posters].sort(() => Math.random() - 0.5));
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,7 +24,7 @@ const PostersPage: React.FC = () => {
           </p>
         </header>
 
-        <ImageGallery images={posters} />
+        <ImageGallery images={randomizedPosters} />
       </div>
     </div>
   );
