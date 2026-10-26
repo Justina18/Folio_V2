@@ -104,7 +104,7 @@ export const caseStudies: CaseStudyData[] = [
     studio: "Personal client project",
     format: "Portfolio site",
     year: 2026,
-    url: "https://rukkyman.netlify.app",
+    url: "https://rukkyman.com",
   },
   {
     slug: "physiohelp",
